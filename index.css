@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark: #111111;
+    --white: #fff;
+    --dark-blue: #242b37;
+    --soft-blue: #f1f2f3;
+    --blue: #4c4c4c;
+
+}
+
+body {
+    font-family: "League Spartan", sans-serif; 
+}
+
+main {
+    background: url("assets/hero-bg-desktop.jpg") no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+header {
+    padding: 0 10dvw;
+    padding-top: 2.5rem;
+    height: 100dvh;
+    background: linear-gradient(to right, var(--dark) 34%, transparent 34%);
+    color: var(--white);
+}
+
+.logo {
+    display: block;
+    width: 5rem;
+}
+
+header > div {
+    width: 40%;
+}
+
+header h1 {
+    font-size: 4.7rem;
+    font-weight: 300;
+    margin: 9rem 0 0.9rem;
+}
+
+header p {
+    width: 80%;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 2.3rem;
+}
+
+.actionBtn {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    padding: 1.4rem 2.8rem;
+    border: 2px solid var(--white);
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+#one {
+    background: linear-gradient(to bottom, var(--white) 95%, var(--dark) 95%);
+}
+
+.pros, #two {
+    width: 100%;
+    padding: 0 10dvw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 0;
+}
+
+.pros:first-child {
+    background: url("assets/pattern-curve-top-right.svg") no-repeat;
+    background-size: 61.5%;
+    background-position: 0 77%;
+}
+
+.pros:last-child {
+    flex-direction: row-reverse;
+    background: url("assets/pattern-curve-top-left.svg") no-repeat;
+    background-size: 61.5%;
+    background-position: 100% 80%;
+}
+
+#one .pros:last-child::after {
+    content: url("icons/pattern-lines.svg");
+    display: block;
+    width: 10dvw;
+    position: absolute;
+    right: 2rem;
+    top: 40%;
+    z-index: 2; 
+}
+
+.pros .illus {
+    display: block;
+    width: 49%;
+    border: 1px solid var(--dark);
+}
+
+.pros .illus img {
+    display: block;
+    width: 100%;
+}
+
+#one .pros:first-child .illus{
+    transform: translateY(-6%);
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+}
+
+#one .pros:first-child .illus::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 92%;
+    height: 4rem;
+    border-radius: 4rem;
+    background: radial-gradient(var(--blue), var(--soft-blue));
+    filter: blur(27px);
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: -1;
+}
+
+.pros:last-child .illus{
+    transform: translateY(6%);
+}
+
+.pros .text, #two .text {
+    width: 40%;
+}
+
+.pros .text h2, #two .text h1 {
+    color: var(--dark-blue);
+    font-size: 2.5rem;
+    font-weight: 700;
+    width: 65%;
+    margin: 2.5rem 0 2rem;
+}
+
+.pros .text p, #two .text p {
+    width: 90%;
+    color: var(--dark-blue);
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+}
+
+#two {
+    background: var(--dark);
+}
+
+#two .text h1, #two .text p {
+    color: var(--white);
+}
+
+#two .menu {
+    width: 49%;
+}
+
+.menuItem {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.menuItem:not(:last-of-type) {
+    border-bottom: 1px solid gray;
+}
+
+.menuItem img {
+    display: block;
+    width: 25%;
+}

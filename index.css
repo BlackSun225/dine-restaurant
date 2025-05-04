@@ -34,7 +34,7 @@ main {
 
 header {
     padding: 0 10dvw;
-    padding-top: 2.5rem;
+    padding-top: 4rem;
     height: 100dvh;
     background: linear-gradient(to right, var(--dark) 34%, transparent 34%);
     color: var(--white);
@@ -42,7 +42,7 @@ header {
 
 .logo {
     display: block;
-    width: 5rem;
+    width: 6rem;
 }
 
 header > div {
@@ -107,23 +107,6 @@ header p {
     background-position: 0 77%;
 }
 
-.pros:last-child {
-    flex-direction: row-reverse;
-    background: url("assets/pattern-curve-top-left.svg") no-repeat;
-    background-size: 61.5%;
-    background-position: 100% 80%;
-}
-
-#one .pros:last-child::after {
-    content: url("icons/pattern-lines.svg");
-    display: block;
-    width: 10dvw;
-    position: absolute;
-    right: 2rem;
-    top: 40%;
-    z-index: 2; 
-}
-
 .pros .illus {
     display: block;
     width: 49%;
@@ -157,8 +140,26 @@ header p {
     z-index: -1;
 }
 
+
+.pros:last-child {
+    flex-direction: row-reverse;
+    background: url("assets/pattern-curve-top-left.svg") no-repeat;
+    background-size: 61.5%;
+    background-position: 100% 80%;
+}
+
 .pros:last-child .illus{
     transform: translateY(6%);
+    position: relative;
+}
+
+.pros:last-child .illus > img:last-child {
+    display: block;
+    width: 10dvw;
+    position: absolute;
+    right: -8dvw;
+    top: 37%;
+    z-index: 2; 
 }
 
 .pros .text, #two > .text {
@@ -296,16 +297,6 @@ header p {
     z-index: 0;
 }
 
-#three .illus::after {
-    content: url("icons/pattern-lines.svg");
-    display: block;
-    width: auto;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-2.5rem, -2.3rem);
-}
-
 #three .illus::before {
     content: "";
     position: absolute;
@@ -321,9 +312,16 @@ header p {
     z-index: -1;
 }
 
-#three .illus img {
-
+#three .illus img:not(:first-child) {
     width: 100%;
+}
+
+#three .illus img:first-child {
+    display: block;
+    width: 10dvw;
+    position: absolute;
+    left: -2dvw;
+    top: -2.2rem;
 }
 
 #family {

@@ -1,0 +1,169 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+:root {
+    --dark: #111111;
+    --white: #fff;
+    --soft-white: #d4d4d4;
+    --dark-blue: #242b37;
+    --soft-blue: #ffffffdd;
+    --soft-blue-two: #f2f3f4;
+    --blue: #4c4c4c;
+    --blueTwo: #9ca3af;
+}
+
+body {
+    font-family: "League Spartan", sans-serif; 
+    scroll-behavior: smooth;
+}
+
+main {
+    width: 100%;
+    min-height: 100dvh;
+    background: var(--white) url("assets/hero-bg-desktop-dark.jpg") no-repeat;
+    background-size: 100% auto;
+}
+
+header {
+    padding: 4rem 10dvw;
+}
+
+.logo {
+    display: block;
+    width: 6rem;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    padding: 7rem 10dvw;
+    /* border: 1px solid red; */
+}
+
+section > div {
+    width: 45%;
+    color: var(--white);
+}
+
+section > div h1 {
+    font-size: 4.7rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+section > div p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 300;
+    text-wrap: balance;
+}
+
+form {
+    width: 45%;
+    background: var(--white);
+    padding: 2rem 3rem 3rem;
+    box-shadow: 5px 5px 20px rgba(168, 168, 178, 0.51);
+}
+
+form input {
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid var(--soft-white);
+    padding: 1rem 0.5rem 1rem;
+    font-family: "League Spartan", sans-serif; 
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+
+}
+
+form input:focus {
+    outline: none;
+    appearance: none;
+}
+
+::placeholder, ::-moz-placeholder, :-ms-input-placeholder {
+    font-family: "League Spartan", sans-serif; 
+    color: var(--blueTwo);
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.pick div {
+    gap: 1rem;
+}
+
+.pick span {
+    font-size: 1.1rem;
+}
+
+.pick div input {
+    width: 5rem;
+}
+
+.numberOfPerson {
+    padding: 1rem;
+    border-bottom: 2px solid var(--soft-white);
+    margin-bottom: 2rem;
+}
+
+.numberOfPerson .content {
+    font-weight: 600;
+    font-size: 1.2rem;
+
+}
+
+.actionBtnDark {
+    display: block;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    padding: 1.4rem 2.8rem;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    border: 2px solid var(--dark);
+    background: var(--dark);
+    transition: all 0.5s linear;
+    text-align: center;
+}
+
+.actionBtnDark:hover {
+    background: var(--white);
+    color: var(--dark);
+}
+
+footer {
+    background: var(--dark);
+    padding: 5rem 10dvw;
+    color: var(--soft-white);
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 10dvw;
+}
+
+footer ul {
+    padding: 0.5rem 0;
+    list-style-type: none;
+}
+
+footer ul li {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+footer ul li:not(:last-child) {
+    margin-bottom: 1rem;
+}

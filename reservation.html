@@ -23,35 +23,59 @@
                         to call on the phone number below. We'll be happy to accomodate you.
                     </p>
                 </div>
-                <form action="">
-                    <input type="text" name="name" id="name" placeholder="Name">
-                    <input type="email" name="email" id="email" placeholder="Email">
-                    <div class="pick" id="date">
-                        <span>Pick a date</span>
-                        <div>
-                            <input type="number" name="month" id="month" placeholder="MM">
-                            <input type="number" name="day" id="day" placeholder="DD">
-                            <input type="number" name="year" id="year" placeholder="YYYY">
+                <div class="formWrapper">
+                    <form action="">
+                        <input type="text" name="name" id="name" placeholder="Name">
+                        <input type="email" name="email" id="email" placeholder="Email">
+                        <div class="pick" id="date">
+                            <span>Pick a date</span>
+                            <div>
+                                <input type="number" name="month" id="month" min="1" max="12" placeholder="MM">
+                                <input type="number" name="day" id="day" min="1" max="31" placeholder="DD">
+                                <input type="number" name="year" id="year" max="2030" placeholder="YYYY">
+                            </div>
                         </div>
-                    </div>
-                    <div class="pick" id="time">
-                        <span>Pick a time</span>
-                        <div>
-                            <input type="number" name="hour" id="hour" placeholder="09">
-                            <input type="number" name="minute" id="minute" placeholder="00">
-                            <select name="" id="">
-                                <option value="AM">AM</option>
-                                <option value="PM">PM</option>
-                            </select>
+                        <div class="pick" id="time">
+                            <span>Pick a time</span>
+                            <div>
+                                <input type="number" name="hour" id="hour" min="0" max="12" placeholder="09">
+                                <input type="number" name="minute" id="minute" min="0" max="12" placeholder="00">
+                                <!-- <select name="" id="">
+                                    <option value="AM">AM</option>
+                                    <option value="PM">PM</option>
+                                </select> -->
+                                <label for="dropTest" id="selectDrop">
+                                    <input id="dropTest" type="checkbox" />
+                                    <div>
+                                        <span>AM</span>
+                                        <img src="icons/icon-arrow.svg" alt="arrow icon">
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <img src="icons/icon-check.svg" alt=""><span>AM</span>
+                                        </li>
+                                        <li>
+                                            <img src="icons/icon-check.svg" alt=""><span>PM</span>
+                                        </li>
+                                    </ul>
+                                </label>
+                            </div>
                         </div>
+                        <div class="numberOfPerson">
+                            <span id="minus">
+                                <img src="icons/icon-minus.svg" />
+                            </span>
+                            <div class="content">4 people</div>
+                            <span id="plus">
+                                <img src="icons/icon-plus.svg" />
+                            </span>
+                        </div>
+                        <a class="actionBtnDark" href="">MAKE A RESERVATION</a>
+                    </form>
+                    <div class="illus">
+                        <img alt="six lines aligned vertically for decoration" src="icons/pattern-lines.svg" />
                     </div>
-                    <div class="numberOfPerson">
-                        <img id="minus" src="icons/icon-minus.svg" />
-                        <div class="content">4 people</div>
-                        <img id="plus" src="icons/icon-plus.svg" />
-                    </div>
-                    <a class="actionBtnDark" href="">BOOK A TABLE</a>
-                </form>
+                </div>
                 
             </section>
             <footer>

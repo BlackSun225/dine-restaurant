@@ -107,10 +107,17 @@ form input, #selectDrop {
     position: relative;
 }
 
+/*form input:focus {
+    border-bottom-color: var(--dark-blue);
+    caret-color: var(--dark-blue);
+}*/
+
 #selectDrop {
     padding: 1rem 0.7rem;
-    position: relative;
-    z-index: 1;
+}
+
+#selectDrop:has(input.checked) {
+    border-bottom-color: var(--dark-blue);
 }
 
 
@@ -124,27 +131,28 @@ form input, #selectDrop {
     z-index: -2;
 }
 
-#selectDrop > div {
+#selectDrop .dropVal {
     display: flex;
     width: 100%;
     align-items: center;
-    /* border: 1px solid rebeccapurple; */
 }
 
-#selectDrop > div img {
+#selectDrop .dropVal img {
     transition: all linear 0.5s;
 }
 
-#selectDrop:has(input:checked) > div img {
+#selectDrop:has(input.checked) .dropVal img {
     transform: rotate(180deg);
 }
 
-#selectDrop:has(input:not(:focus)) > div img {
+#selectDrop:has(input:not(.checked)) .dropVal img {
     transform: rotate(0);
 }
 
-#selectDrop > ul {
+
+#selectDrop .dropMenu {
     display: none;
+    opacity: 0;
     width: 100%;
     padding: 0.5rem 0;
     position: absolute; 
@@ -152,27 +160,19 @@ form input, #selectDrop {
     left: 0;
     transform: translateY(calc(100% + 0.7rem));
     box-shadow: 0 0 10px var(--blueTwo);
-    /* border: 1px solid var(--blue); */
 }
 
-#selectDrop:has(input:checked) ul {
-    display: block; 
+#selectDrop:has(input.checked) .dropMenu {
+   display: block;
+   opacity: 1;
+   animation: appear 1s linear;
 }
-
-#selectDrop:has(input:not(:focus)) ul {
-    display: none; 
-}
-
-/* #selectDrop > ul {
-    display: block;
-    
-} */
 
 ul {
     list-style-type: none;
 }
 
-#selectDrop ul li {
+#selectDrop .dropMenu .dropOption {
     display: flex;
     padding: 0.5rem 0;
     justify-content: space-evenly;
@@ -180,16 +180,49 @@ ul {
     background: var(--white);
 }
 
-#selectDrop ul li img {
+#selectDrop .dropMenu .dropOption img {
     visibility: hidden;
 }
 
-#selectDrop ul li.active img{
+#selectDrop .dropMenu .dropOption.active img{
     visibility: visible;
 }
 
-#selectDrop ul li:hover span {
+#selectDrop .dropMenu .dropOption:hover span {
     color: var(--brown);
+}
+
+#selectDrop:has(input:not(.checked)) .dropMenu {
+    animation: disappear 1s linear;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1; 
+        display: block; 
+    }
+    70%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0; 
+        display: none; 
+    }
+    30%{
+        opacity: 0.3;
+        display: block;
+    }
+    100%{
+        opacity: 1;
+        display: block;
+    }
 }
 
 form input:focus {

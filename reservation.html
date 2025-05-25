@@ -25,8 +25,8 @@
                 </div>
                 <div class="formWrapper">
                     <form action="">
-                        <input type="text" name="name" id="name" placeholder="Name">
-                        <input type="email" name="email" id="email" placeholder="Email">
+                        <input type="text" name="name" id="name" placeholder="Name"  />
+                        <input type="email" name="email" id="email" placeholder="Email" />
                         <div class="pick" id="date">
                             <span>Pick a date</span>
                             <div>
@@ -38,23 +38,20 @@
                         <div class="pick" id="time">
                             <span>Pick a time</span>
                             <div>
-                                <input type="number" name="hour" id="hour" min="0" max="12" placeholder="09">
-                                <input type="number" name="minute" id="minute" min="0" max="12" placeholder="00">
-                                <!-- <select name="" id="">
-                                    <option value="AM">AM</option>
-                                    <option value="PM">PM</option>
-                                </select> -->
+                                <input type="number" name="hour" id="hour" min="0" max="12" placeholder="09" >
+                                <input type="number" name="minute" id="minute" min="0" max="12" placeholder="00" >
+            
                                 <label for="dropTest" id="selectDrop">
                                     <input id="dropTest" type="checkbox" />
-                                    <div>
+                                    <div class="dropVal">
                                         <span>AM</span>
                                         <img src="icons/icon-arrow.svg" alt="arrow icon">
                                     </div>
-                                    <ul>
-                                        <li>
+                                    <ul class="dropMenu">
+                                        <li class="dropOption active">
                                             <img src="icons/icon-check.svg" alt=""><span>AM</span>
                                         </li>
-                                        <li>
+                                        <li class="dropOption">
                                             <img src="icons/icon-check.svg" alt=""><span>PM</span>
                                         </li>
                                     </ul>
@@ -94,5 +91,106 @@
                 </ul>
             </footer>
         </main>
+        <script>
+            const name = document.getElementById("name");
+            const nameRegexpValidator = /[0-9]+/g;
+            const email = document.getElementById("email");
+            const emailRegexpValidator = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
+
+            const year = document.getElementById("year");
+            const month = document.getElementById("month");
+            const day = document.getElementById("day");
+            const hour = document.getElementById("hour");
+            const minute = document.getElementById("minute");
+
+
+            const selectDrop = document.getElementById("selectDrop");
+            const dropVal = selectDrop.querySelector(".dropVal");
+            const dropMenu = selectDrop.querySelector(".dropMenu");
+            const dropOptionList = Array.from(dropMenu.getElementsByClassName("dropOption"));
+            const dropTest = selectDrop.querySelector("#dropTest");
+
+            const minus = document.querySelector("#minus");
+            const plus = document.querySelector("#plus");
+            const numberOfPersonContent = document.querySelector(".numberOfPerson .content");
+            var numberOfPerson = 4;
+
+
+            selectDrop.addEventListener("mouseup", () => {
+                if(dropTest.classList.contains("checked")) {
+                    dropTest.classList.remove("checked");
+                }else{
+                    dropTest.classList.add("checked");
+                }
+                //console.log("dropTest classes : ", dropTest.classList); 
+            })
+
+            dropOptionList.forEach(dropOption => {
+                dropOption.addEventListener("click", () => {
+                    //console.log("dropOption clicked");
+                    dropOptionList.forEach(elem => elem.classList.remove("active"));
+                    dropOption.classList.add("active");
+                    dropVal.querySelector("span").textContent = dropOption.querySelector("span").innerText;
+                    //console.log("dropTest classes : ", dropTest.classList);
+                    dropTest.classList.remove("checked");
+                    //console.log("dropTest classes : ", dropTest.classList);
+                });
+            });
+
+            dropTest.addEventListener("blur", () => {
+                //console.log("dropTest blur");
+                if(dropTest.classList.contains("checked") && !selectDrop.matches(":hover")) {
+                    dropTest.classList.remove("checked");
+                    //console.log("dropTest classes : ", dropTest.classList);
+                }
+            });
+
+            minus.addEventListener("click", () => {
+                if(numberOfPerson > 1) {
+                    numberOfPerson-- ;
+                    numberOfPersonContent.innerText = `${numberOfPerson} people`;    
+                } 
+            });
+
+            plus.addEventListener("click", () => {
+                if(numberOfPerson < 101) {
+                    numberOfPerson++ ;
+                    numberOfPersonContent.innerText = `${numberOfPerson} people`;    
+                } 
+            });
+
+            year.setAttribute("min", new Date().getFullYear().toString());
+
+            [month, day, hour, minute].forEach(input => {
+                input.addEventListener("change", (event) => {
+                    if(event.target.value && event.target.value.length < 2) {
+                        event.target.value = event.target.value.padStart(2, "0");
+                    }
+                });
+            });
+
+            name.addEventListener('change', (event) => {
+                //console.log("event : ", event);
+                console.log("value: ", name.value);
+                if(nameRegexpValidator.test(name.value) || name.value == "") {
+                    name.style.borderBottomColor = "red";
+                }else{
+                    name.style.borderBottomColor = "var(--soft-white)";
+                }
+            })
+
+            email.addEventListener('change', (event) => {
+                //console.log("event : ", event);
+                console.log("value: ", email.value);
+                if(emailRegexpValidator.test(email.value)) {
+                    email.style.borderBottomColor = "var(--soft-white)";
+                }else{
+                    email.style.borderBottomColor = "red";
+                }
+            })
+
+        </script>
     </body>
+    
 </html>

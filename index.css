@@ -191,7 +191,7 @@ header p {
 #two {
     background: var(--dark) url("assets/pattern-curve-top-right.svg") no-repeat;
     background-size: auto;
-    background-position: -50% 199%;
+    background-position: -51% 203%;
     padding: 5rem 10dvw;
     position: relative;
 }
@@ -199,8 +199,8 @@ header p {
 #two::after {
     content: "";
     display: block;
-    width: 1rem;
-    height: 1rem;
+    width: 20px;
+    height: 20px;
     background: var(--soft-blue-two);
     position: absolute;
     bottom: 0;
@@ -316,33 +316,66 @@ header p {
     width: 100%;
 }
 
-#three .illus img:first-child {
+#three .illus .pattern {
     display: block;
     width: 10dvw;
     position: absolute;
     left: -2dvw;
     top: -2.2rem;
+    z-index: 6;
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1; 
+    }
+    70%{
+        opacity: 0.2;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0; 
+    }
+    30%{
+        opacity: 0.3;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 #family {
-    /* top: 0;
-    left: 0;
-    z-index: 3; */
     display: block;
+    opacity: 1;
+    position: relative;
+    z-index: 3; 
+}
+
+#special, #social {
+    top: 0;
+    left: 0;
+    display: block;
+    opacity: 1;
+    position: absolute;
 }
 
 #special {
-    /* top: -1rem;
     z-index: 2;
-    left: 1rem; */
-    display: none;
 }
 
 #social {
-    /* top: -2rem;
     z-index: 1;
-    left: 2rem; */
-    display: none;
+
+}
+
+#family, #special, #social {
+    animation-duration: 1s;
+    animation-timing-function: linear;
 }
 
 #three .details {
@@ -364,32 +397,126 @@ ul {
     list-style-type: none;
 }
 
+#three .details h1 {
+    position: relative;
+}
+
+#three .details h1 .family
+#three .details h1 .special, 
+#three .details h1 .social {
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+}
+
+#three .details h1 .family {
+    position: relative;
+    z-index: 3;
+    opacity: 1;
+}
+
+#three .details h1 .special, 
+#three .details h1 .social  {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+#three .details h1 .special {
+    z-index: 2;
+}
+
+#three .details h1 .social {
+    z-index: 1;
+}
+
 #three .details ul li {
     display: block;
-    letter-spacing: 2px;
-    font-weight: 600;
-    font-size: 0.9rem;
+    height: auto;
     margin: 1rem 0;
-    color: var(--blue);
-    opacity: 0.5;
     position: relative;
     cursor: pointer;
 }
 
-#three .details ul li.active {
-    opacity: 1;
+#three .details ul li .text {
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--blue);
+    opacity: 0.5;
+    transition: all .3s linear;
 }
 
-#three .details ul li.active::after {
-    content: "";
+#three .details ul li:hover .text {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#three .details ul li .indicator {
     display: block;
-    width: calc((100dvw - 20dvw) / 12);
+    width: 0;
     height: 1px;
-    background: var(--blue);
-    opacity: 0.6;
     position: absolute;
     top: 40%;
     left: -8.7dvw;
+    background: var(--blue);
+    opacity: 1;
+    transition: all 1s linear;
+    animation: shrink 0.5s linear;
+}
+
+#three .details ul li.active .text {
+    opacity: 1;
+}
+
+@keyframes grow {
+    from {width: 0;}
+    to {width: calc((100dvw - 20dvw) / 12);}
+}
+
+@keyframes shrink {
+    from {width: calc((100dvw - 20dvw) / 12);}
+    to {width: 0;}
+}
+
+#three .details ul li.active .indicator {
+    width: calc((100dvw - 20dvw) / 12);
+    animation: grow 0.5s linear;
+}
+
+#three .paragraph {
+    position: relative;
+}
+
+#three .paragraph .family {
+    display: block;
+    position: relative;
+    z-index: 3;
+}
+
+#three .paragraph .social, 
+#three .paragraph .special, 
+#three .paragraph .family {
+    background: var(--white);
+    opacity: 1;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+}
+
+#three .paragraph .social, 
+#three .paragraph .special {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+#three .paragraph .special {
+    z-index: 2;
+}
+
+#three .paragraph .social {
+    z-index: 1;
 }
 
 #four {

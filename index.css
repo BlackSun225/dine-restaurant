@@ -13,31 +13,13 @@
     --dark-blue: #242b37;
     --soft-blue: #ffffffdd;
     --soft-blue-two: #f2f3f4;
+    --soft-blue-three: rgba(59, 59, 162, 0.455);
     --blue: #4c4c4c;
-
 }
-
-/* html {
-    scroll-behavior: smooth;
-} */
 
 body {
     font-family: "League Spartan", sans-serif; 
     scroll-behavior: smooth;
-}
-
-main {
-    background: url("assets/hero-bg-desktop.jpg") no-repeat;
-    background-size: 100%;
-    background-attachment: fixed;
-}
-
-header {
-    padding: 0 10dvw;
-    padding-top: 4rem;
-    height: 100dvh;
-    background: linear-gradient(to right, var(--dark) 34%, transparent 34%);
-    color: var(--white);
 }
 
 .logo {
@@ -45,19 +27,11 @@ header {
     width: 6rem;
 }
 
-header > div {
-    width: 40%;
-}
-
-header h1 {
-    font-size: 4.7rem;
+header > div h1 {
     font-weight: 300;
-    margin: 9rem 0 0.9rem;
 }
 
-header p {
-    width: 80%;
-    font-size: 1.2rem;
+header > div p {
     line-height: 1.8rem;
     font-weight: 300;
     margin-bottom: 2.3rem;
@@ -68,8 +42,7 @@ header p {
     text-decoration: none;
     color: var(--white);
     font-weight: 500;
-    padding: 1.4rem 2.8rem;
-    font-size: 1rem;
+    padding: 1.4dvw 3dvw;
     letter-spacing: 2px;
     transition: all 0.5s linear;
 }
@@ -84,10 +57,6 @@ header p {
     color: var(--dark-blue);
 }
 
-#one {
-    background: linear-gradient(to bottom, var(--white) 95%, var(--dark) 95%);
-}
-
 .pros, #two {
     width: 100%;
     display: flex;
@@ -96,15 +65,8 @@ header p {
     z-index: 0;
 }
 
-.pros {
-    padding: 0 10dvw;
-    align-items: center;
-}
-
 .pros:first-child {
     background: url("assets/pattern-curve-top-right.svg") no-repeat;
-    background-size: 61.5%;
-    background-position: 0 77%;
 }
 
 .pros .illus {
@@ -119,10 +81,10 @@ header p {
 }
 
 #one .pros:first-child .illus{
-    transform: translateY(-6%);
     position: relative;
     z-index: 1;
     overflow: visible;
+    transition: all 0.3s linear;
 }
 
 #one .pros:first-child .illus::after {
@@ -132,7 +94,7 @@ header p {
     width: 92%;
     height: 4rem;
     border-radius: 4rem;
-    background: radial-gradient(var(--blue), var(--soft-blue));
+    background: radial-gradient(var(--soft-blue-three), var(--soft-blue-two));
     filter: blur(27px);
     bottom: 0;
     left: 50%;
@@ -140,12 +102,8 @@ header p {
     z-index: -1;
 }
 
-
 .pros:last-child {
-    flex-direction: row-reverse;
     background: url("assets/pattern-curve-top-left.svg") no-repeat;
-    background-size: 61.5%;
-    background-position: 100% 80%;
 }
 
 .pros:last-child .illus{
@@ -157,18 +115,11 @@ header p {
     display: block;
     width: 10dvw;
     position: absolute;
-    right: -8dvw;
-    top: 37%;
     z-index: 2; 
-}
-
-.pros .text, #two > .text {
-    width: 40%;
 }
 
 .pros .text h2, #two > .text h1, #three .details h1 {
     color: var(--dark-blue);
-    font-size: 2.5rem;
     font-weight: 700;
 }
 
@@ -176,45 +127,16 @@ header p {
     margin: 2rem 0 1.3rem;
 }
 
-.pros .text h2 {
-    width: 65%;
-}
-
 .pros .text p, #two > .text p, #three .details p {
     width: 90%;
     color: var(--dark-blue);
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.2dvw , 1.4rem);
     line-height: 1.8rem;
     font-weight: 400;
 }
 
-#two {
-    background: var(--dark) url("assets/pattern-curve-top-right.svg") no-repeat;
-    background-size: auto;
-    background-position: -51% 203%;
-    padding: 5rem 10dvw;
-    position: relative;
-}
-
-#two::after {
-    content: "";
-    display: block;
-    width: 20px;
-    height: 20px;
-    background: var(--soft-blue-two);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
 #two > .text {
     position: relative;
-}
-
-#two > .text img {
-    position: absolute;
-    left : 0;
-    top: 0;
 }
 
 #two > .text h1 {
@@ -228,34 +150,28 @@ header p {
     color: var(--soft-white);
 } 
 
-#two .menu {
-    width: 49%;
-}
-
 .menuItem {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 0;
-    gap: 12%;
+    padding: 1.8rem 0;
+    gap: 10%;
 }
 
 .menuItem:not(:last-of-type) {
-    border-bottom: 1px solid gray;
-}
-
-.menuItem img {
-    display: block;
-    width: 8.5rem;
+    border-bottom: 1px solid var(--blue);
 }
 
 .menuItem > .text {
     color: var(--white);
 }
 
+.menuItem img {
+    display: block;
+}
+
 .menuItem > .text h2 {
-    font-size: 1.2rem;
     font-weight: 600;
     line-height: 2rem;
     position: relative;
@@ -264,34 +180,31 @@ header p {
 .menuItem > .text h2::before {
     content: "";
     display: block;
-    width: 9.5%;
+    width: 9%;
     height: 1px;
     background: var(--soft-white);
     position: absolute;
     top: 45%;
     left: 0;
-    transform: translateX(-200%);
+    transform: translateX(-180%);
 }
 
 .menuItem > .text p {
-    font-size: 1rem;
     line-height: 1.6rem;
     color: var(--soft-white);
+    font-weight: 300;
 }
 
 #three {
     width: 100%;
-    padding: 9rem 10dvw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background:  var(--white) url("assets/pattern-curve-top-right.svg") no-repeat;
     background-position: -50% -1rem;
     background-size: auto;
+    /* border: 2px solid red; */
 }
 
+
 #three .illus {
-    width: 49%;
     position: relative;
     overflow: visible;
     z-index: 0;
@@ -313,15 +226,13 @@ header p {
 }
 
 #three .illus img:not(:first-child) {
+    display: block;
     width: 100%;
 }
 
 #three .illus .pattern {
     display: block;
-    width: 10dvw;
     position: absolute;
-    left: -2dvw;
-    top: -2.2rem;
     z-index: 6;
 }
 
@@ -349,37 +260,35 @@ header p {
     }
 }
 
-#family {
+img.family {
     display: block;
+    width: 100%;
     opacity: 1;
     position: relative;
     z-index: 3; 
 }
 
-#special, #social {
+img.special, img.social {
     top: 0;
     left: 0;
     display: block;
+    width: 100%;
     opacity: 1;
     position: absolute;
 }
 
-#special {
+img.special {
     z-index: 2;
 }
 
-#social {
+img.social {
     z-index: 1;
 
 }
 
-#family, #special, #social {
+img.family, img.special, img.social {
     animation-duration: 1s;
     animation-timing-function: linear;
-}
-
-#three .details {
-    width: 40%;
 }
 
 .actionBtnDark {
@@ -397,36 +306,42 @@ ul {
     list-style-type: none;
 }
 
-#three .details h1 {
+#three .details .detailsTitle {
+    display: block;
+    width: 100%;
     position: relative;
 }
 
-#three .details h1 .family
-#three .details h1 .special, 
-#three .details h1 .social {
+#three .details .detailsTitle .family
+#three .details .detailsTitle .special, 
+#three .details .detailsTitle .social {
+    display: block;
+    width: 100%;
+    /* background: var(--white); */
     animation-duration: 0.7s;
     animation-timing-function: linear;
+    opacity: 1;
+
 }
 
-#three .details h1 .family {
+#three .details .detailsTitle .family {
     position: relative;
     z-index: 3;
-    opacity: 1;
 }
 
-#three .details h1 .special, 
-#three .details h1 .social  {
+#three .details .detailsTitle .special, 
+#three .details .detailsTitle .social  {
     position: absolute;
     left: 0;
     top: 0;
     opacity: 0;
 }
 
-#three .details h1 .special {
+#three .details .detailsTitle .special {
     z-index: 2;
 }
 
-#three .details h1 .social {
+#three .details .detailsTitle .social {
     z-index: 1;
 }
 
@@ -441,7 +356,7 @@ ul {
 #three .details ul li .text {
     letter-spacing: 2px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: clamp(0.9rem, 1.2dvw, 1.rem);
     color: var(--blue);
     opacity: 0.5;
     transition: all .3s linear;
@@ -457,12 +372,7 @@ ul {
     width: 0;
     height: 1px;
     position: absolute;
-    top: 40%;
-    left: -8.7dvw;
     background: var(--blue);
-    opacity: 1;
-    transition: all 1s linear;
-    animation: shrink 0.5s linear;
 }
 
 #three .details ul li.active .text {
@@ -477,11 +387,6 @@ ul {
 @keyframes shrink {
     from {width: calc((100dvw - 20dvw) / 12);}
     to {width: 0;}
-}
-
-#three .details ul li.active .indicator {
-    width: calc((100dvw - 20dvw) / 12);
-    animation: grow 0.5s linear;
 }
 
 #three .paragraph {
@@ -508,7 +413,7 @@ ul {
     position: absolute;
     left: 0;
     top: 0;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 #three .paragraph .special {
@@ -543,6 +448,24 @@ footer {
     justify-content: flex-start;
     align-items: start;
     gap: 10dvw;
+    position: relative;
+}
+
+#blacksun225 {
+    display: block;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to right, orange 34%, white 34% 66%, green 66%);
+}
+
+footer > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 10dvw;
 }
 
 footer ul {
@@ -558,3 +481,632 @@ footer ul li:not(:last-child) {
     margin-bottom: 1rem;
 }
 
+
+
+@media screen and (min-width: 1001px) {
+    main {
+        background: linear-gradient(to right, transparent 34%, rgba(85, 86, 90, 0.084) 34%), url("assets/hero-bg-desktop.jpg") no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+    }
+
+    header {
+        width: 100%;
+        padding: 0 10dvw;
+        padding-top: 4.2dvw;
+        aspect-ratio: 16/9;
+        /* height: 100vh; */
+        background: linear-gradient(to right, var(--dark) 34%, transparent 34%);
+        color: var(--white);
+    }
+    header > div {
+        width: 45%;
+    }
+    
+    header > div h1 {
+        margin: 9dvw 0 0.9rem;
+        font-size: clamp(2.2rem, 4.8dvw , 4.7rem);
+    }
+    
+    header > div p {
+        width: 90%;
+        font-size: clamp(1rem, 1.5dvw , 1.4rem);
+    }
+
+    #one {
+        background: linear-gradient(to bottom, var(--white) 95%, var(--dark) 95%);
+    }
+
+    .actionBtn, .actionBtnDark  {
+        font-size: clamp(1rem, 1.2dvw , 1.3rem);
+    }
+
+    .tablet, #three .illus img.tablet {
+        display: none;
+    }
+
+    .pros {
+        padding: 0 10dvw;
+        align-items: center;
+    }
+
+    .pros .illus .tablet {
+        display: none;
+    }
+
+    .pros:first-child {
+        background-size: 61.5%;
+        background-position: 0 77%;
+    }
+
+    #one .pros:first-child .illus {
+        transform: translateY(-6%);
+    }
+
+    .pros .text h2, #two > .text h1, #three .details h1 {
+        font-size: clamp(2rem, 2.7dvw , 2.5rem);
+    }
+
+    .pros .text h2 {
+        width: 65%;
+    }
+
+    .pros:last-child {
+        flex-direction: row-reverse;
+        background-size: 61.5%;
+        background-position: 100% 80%;
+    }
+
+    .pros:last-child .illus > img:last-child {
+        display: block;
+        width: 10dvw;
+        position: absolute;
+        right: -8dvw;
+        top: 37%;
+        z-index: 2; 
+    }
+
+    .pros .text, #two > .text {
+        width: 40%;
+    }
+
+    #two {
+        background: var(--dark) url("assets/pattern-curve-top-right.svg") no-repeat;
+        background-size: auto;
+        background-position: -51% 203%;
+        padding: 5rem 10dvw;
+        position: relative;
+    }
+
+    #two::after {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: var(--soft-blue-two);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    #two > .text img {
+        position: absolute;
+        left : 0;
+        top: 0;
+    }
+ 
+    #two .menu {
+        width: 49%;
+    }
+
+    .menuItem img {
+        width: 15dvw;
+        max-width: 8.5rem;
+    }
+
+    .menuItem > .text h2 {
+        font-size: clamp(0.8rem, 1.3dvw , 1.5rem);
+    }
+
+    .menuItem > .text p {
+        font-size: clamp(0.8rem, 1.2dvw , 1.3rem);
+    }
+
+    #three {
+        padding: 9rem 10dvw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-size: 100%;
+        background-position: -63dvw 0;
+    }
+
+    #three .illus img.tablet, #three .illus img.mob {
+        display: none;
+    }
+
+    #three .illus {
+        width: 49%;
+    }
+
+    #three .illus .pattern {
+        width: 10dvw;
+        left: -2dvw;
+        top: -2.2rem;
+    }
+
+    #three .details {
+        width: 40%;
+    }
+
+    #three .details ul li .indicator {
+        top: 40%;
+        left: -8.7dvw;
+        opacity: 1;
+        transition: all 1s linear;
+        animation: shrink 0.5s linear;
+    }
+
+    #three .details ul li.active .indicator {
+        width: calc((100dvw - 20dvw) / 12);
+        animation: grow 0.5s linear;
+    }
+
+}
+
+
+
+@media screen and (width <= 1000px)  {
+    main {
+        background: url("assets/hero-bg-tablet\ \(1\).jpg") no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+    }
+
+    header {
+        padding: 0 12dvw;
+        height: 100dvh;
+        background: transparent;
+        padding-bottom: 20dvh;
+        color: var(--white);
+    }
+
+    header > div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    header > div h1 {
+        margin: 1.5rem auto;
+        font-size: clamp(1.5rem, 5.5dvw , 3.5rem);
+        line-height: 3rem;
+    }
+
+    header > div p, .pros .text p {
+        width: 100%;
+        text-align: center;
+        font-size: clamp(1.1rem, 2.5dvw , 1.7rem);
+        line-height: 2.4rem;
+    }
+
+    #one {
+        background: linear-gradient(to bottom, var(--dark) 2%, var(--white) 2%);
+    }
+
+    .actionBtn, .actionBtnDark  {
+        font-size: clamp(1rem, 1.8dvw , 1.6rem);
+        padding: 2.7dvw 6dvw;
+    }
+
+    .pros {
+        display: block;
+        padding: 0 12dvw;
+    }
+
+    .pros .illus, .pros .text {
+        width: 100%;
+    }
+
+    .pros .illus .mob {
+        display: none;
+    }
+
+    .pros:first-child {
+        background-size: 123%;
+        background-position: -74dvw 14dvw;
+    }
+
+    .pros:last-child {
+        background-size: 100dvw;
+        background-position: 50dvw 103%;
+    }
+
+    #one .pros:first-child .illus {
+        transform: translateY(-6dvw);
+    }
+
+    .pros:last-child .illus::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 92%;
+        height: 4rem;
+        border-radius: 4rem;
+        background: radial-gradient(var(--soft-blue-three), var(--soft-blue-two));
+        filter: blur(27px);
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        z-index: -1;
+    }
+
+    .pros:last-child .illus > img:last-child {
+        display: block;
+        width: 20dvw;
+        position: absolute;
+        right: 0;
+        bottom: 7dvw;
+        z-index: 2; 
+        transform: translateX(40%);
+    }
+    
+    .pros .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10dvw;
+    }
+
+    .pros:last-child .text {
+        padding-top: 9dvw;
+    }
+
+    .pros .text h2, #two > .text h1, #three .details h1, #four h1 {
+        font-size: clamp(2.5rem, 6dvw , 3.5rem);
+        line-height: 3.5rem;
+    }
+    
+    .pros .text h2,
+    .pros .text p {
+        text-align: center;
+    }
+
+    .pros .text h2 {
+        width: 90%;
+        text-align: center;
+        text-wrap: balance;
+    }
+
+    .pros .text p {
+        width: 90%;
+    }
+
+    #two {
+        padding: 12dvw;
+        background: var(--dark);
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #two .text, #two .menu {
+        width: 100%;
+    }
+
+    #two > .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 2.5rem;
+    }
+
+    #two > .text h1, #two > .text p {
+        width: 85%;
+        text-align: center;
+    }
+
+    #two > .text p, #three .details .paragraph p {
+        font-size: clamp(1.1rem, 2.5dvw , 1.7rem);
+        line-height: 2.4rem;
+    }
+
+    .menuItem img {
+        width: 16dvw;
+    }
+
+    .menuItem > .text h2 {
+        line-height: 2.6rem;
+    }
+
+    .menuItem > .text h2::before {
+        width: 8%;
+    }
+
+    .menuItem > .text p {
+        font-size: clamp(1rem, 2.2dvw , 1.5rem);
+        line-height: 2.2rem;
+        font-weight: 400;
+    }
+
+    #three {
+        padding: 5dvw 0;
+        background-position: calc(-84dvw / 2) 0;
+    }
+
+    #three .illus {
+        margin: 10dvw 12dvw;
+    }
+
+    #three .illus img.desk, #three .illus img.mob {
+        display: none;
+    }
+
+    #three .illus .pattern {
+        width: 20dvw;
+        left: 0;
+        top: 0;
+        transform: translate(-40%, -50%);
+    }
+
+    
+    #three .details {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    #three .details > div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #three .details ul, #three .details .paragraph, #three .details .detailsTitle, #three .details .paragraph p {
+        width: 100%;
+    }
+
+    #three .details ul {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #three .details ul li {
+        padding-bottom: 1rem;
+    }
+
+    #three .details ul li .text {
+        font-size: clamp(1rem, 2.2dvw, 1.5rem);
+    }
+
+    #three .details ul li .indicator {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 1;
+        transition: all 0.3s linear;
+    }
+
+    #three .details ul li.active .indicator {
+        width: 25%;
+    }
+
+    #three .details h1 div {
+        width: 100%;
+        text-align: center;
+    }
+
+    #three .details .paragraph {
+        width: 75%;
+        text-align: center;
+    }
+
+    #four {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        background: url("assets/ready-bg-tablet.jpg") no-repeat;
+        background-size: 100%;
+    }
+
+    footer {
+        padding: 8dvw 12dvw;
+    }
+
+    footer > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        gap: 1.5rem;
+    }
+
+    footer ul li {
+        font-size: clamp(1rem, 1.9dvw, 1.5rem);
+    }
+}
+
+
+
+@media screen and (max-width: 500px) {
+    main {
+        background: url("assets/hero-back-mobile.jpg") no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+    }
+
+    
+    header {
+        padding: 0 6dvw;
+        height: 100dvh;
+        background: transparent;
+        padding-bottom: 20dvh;
+        color: var(--white);
+    }
+
+    header > div h1 {
+        width: 90%;
+        text-align: center;
+        text-wrap: balance;
+        font-size: clamp(1.5rem, 7dvw , 3.5rem);
+    }
+
+    .actionBtn, .actionBtnDark  {
+        font-size: clamp(0.9rem, 2.6dvw , 1.6rem);
+        padding: 5dvw 11dvw;
+    }
+
+    .pros .illus .tablet {
+        display: none;
+    }
+
+    .pros .illus .mob {
+        display: block;
+        width: 100%;
+    }
+
+    .pros {
+        padding: 0 6dvw;
+    }
+
+    .pros:first-child, .pros:last-child {
+        background: var(--white);
+    }
+
+    #one .pros:first-child .illus {
+        transform: translateY(-12dvw);
+    }
+
+    .pros:last-child .illus > img:last-child {
+        display: none;
+    }
+
+    .pros:last-child .text {
+        padding: 13dvh 0 18dvh;
+    }
+
+    #two {
+        padding: 18dvw 6dvw;
+    }
+
+    #two > .text h1, #two > .text p {
+        width: 100%;
+    }
+
+    .menuItem {
+        display: block;
+        padding-bottom: 3dvh;
+    }
+
+    .menuItem img, .menuItem > .text {
+        width: 100%;
+    }
+
+    .menuItem > .text h2, .menuItem > .text p {
+        text-align: center;
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    .menuItem > .text {
+        padding: 10dvw 0;
+    }
+
+    .menuItem > .text h2::before {
+        display: none;
+    }
+
+    .menuItem > .text p {
+        font-size: clamp(1rem, 4dvw , 2rem);
+        line-height: 2rem;
+    }
+
+    #three {
+        background: var(--white);
+        padding: 15dvh 0;
+    }
+
+    #three .illus {
+       margin: 0 6dvw 10dvw; 
+    }
+
+    #three .illus img.desk, #three .illus img.tablet {
+        display: none;
+    }
+
+    #three .illus img.mob {
+        display: block;
+        width: 100%;
+    }
+
+    #three .illus .pattern {
+        display: none;
+    }
+
+    #three .details ul {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #three .details ul li {
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.6rem;
+    }
+
+    #three .details {
+        padding: 0 6dvw;
+    }
+
+    #three .details > div h1, 
+    #three .details > div .paragraph , 
+    #three .details > div .paragraph p {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    #three .details > div .paragraph p {
+        width: 100%;
+        font-size: clamp(1rem, 4dvw , 2rem);
+        line-height: 2rem;
+    }
+
+    #four {
+        background: url("assets/ready-bg-mobile.jpg") no-repeat;
+        background-size: 100%;
+        padding: 20dvw 0;
+    }
+
+    #four h1 {
+        text-align: center;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 18dvw 0;
+    }
+
+    footer > div {
+        flex-direction: column;
+    }
+
+    footer ul, footer ul li {
+        width: 100%;
+    }
+
+    footer ul li {
+        text-align: center;
+    }
+}

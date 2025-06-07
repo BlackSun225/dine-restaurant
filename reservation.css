@@ -29,7 +29,7 @@ main {
 }
 
 header {
-    padding: 4rem 10dvw;
+    padding: 5dvw 10dvw;
 }
 
 .logo {
@@ -40,7 +40,7 @@ header {
 section {
     display: flex;
     justify-content: space-between;
-    padding: 7rem 10dvw;
+    padding: 8dvw 10dvw;
     background: url("assets/pattern-curve-bottom-right.svg") no-repeat;
     background-size: 72% auto;
     background-position: bottom left;
@@ -52,13 +52,13 @@ section .text {
 }
 
 section .text h1 {
-    font-size: 4.7rem;
+    font-size: clamp(2.2rem, 5.5dvw , 4.7rem);
     font-weight: 300;
     margin-bottom: 1rem;
 }
 
 section .text p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 1.5dvw , 1.4rem);
     line-height: 1.8rem;
     font-weight: 300;
     text-wrap: balance;
@@ -86,10 +86,26 @@ section .formWrapper::after {
     transform: translateY(15%);
 }
 
+
+.formWrapper .illus {
+    position: absolute;
+    display: block;
+    width: 10dvw;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    transform: translate(-50%, 50%);
+}
+
+.formWrapper .illus img {
+    display: block;
+    width: 100%;
+}
+
 form {
     width: 100%;
     background: var(--white);
-    padding: 2rem 3rem 3rem;
+    padding: 2dvw 4dvw 4dvw;
     position: relative;
     z-index: 1;
 }
@@ -102,24 +118,62 @@ form input, #selectDrop {
     padding: 1rem;
     padding-right: 0;
     font-family: "League Spartan", sans-serif; 
-    margin-bottom: 1.2rem;
-    font-size: 1.1rem;
+    margin-bottom: 1.3dvw;
+    font-size: clamp(1rem, 1.3dvw , 1.4rem);
+    /* font-size: 1.1rem; */
     position: relative;
 }
 
-/*form input:focus {
-    border-bottom-color: var(--dark-blue);
-    caret-color: var(--dark-blue);
-}*/
+form input:focus {
+    outline: none;
+    appearance: none;
+}
+
+::placeholder, ::-moz-placeholder, :-ms-input-placeholder {
+    font-family: "League Spartan", sans-serif; 
+    color: var(--blueTwo);
+    font-weight: 400;
+    /* font-size: 1.1rem; */
+    font-size: clamp(1rem, 1.5dvw , 1.4rem);
+}
+
+form .pick, .pick > div, .numberOfPerson {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form .pick, .pick > div {
+    gap: 1.5dvw;
+}
+
+.pick > span {
+    /* font-size: 1.1rem; */
+    display: block;
+    width: 100%;
+    max-width: 6rem;
+    font-size: clamp(1rem, 1.3dvw , 1.4rem);
+    padding: 0;
+}
+
+.pick div input, #selectDrop {
+    width: 100%;
+    min-width: 5.5dvw;
+    flex: 1;
+}
 
 #selectDrop {
     padding: 1rem 0.7rem;
 }
 
+#selectDrop > div {
+    gap: 0.8rem;
+}
+
 #selectDrop:has(input.checked) {
     border-bottom-color: var(--dark-blue);
 }
-
 
 #selectDrop input {
     all: unset;
@@ -154,7 +208,7 @@ form input, #selectDrop {
     display: none;
     opacity: 0;
     width: 100%;
-    padding: 0.5rem 0;
+    padding: 0.6dvw 0;
     position: absolute; 
     bottom: 0;
     left: 0;
@@ -165,7 +219,7 @@ form input, #selectDrop {
 #selectDrop:has(input.checked) .dropMenu {
    display: block;
    opacity: 1;
-   animation: appear 1s linear;
+   animation: appear 0.6s linear;
 }
 
 ul {
@@ -174,6 +228,7 @@ ul {
 
 #selectDrop .dropMenu .dropOption {
     display: flex;
+    width: 100%;
     padding: 0.5rem 0;
     justify-content: space-evenly;
     align-items: center;
@@ -193,7 +248,7 @@ ul {
 }
 
 #selectDrop:has(input:not(.checked)) .dropMenu {
-    animation: disappear 1s linear;
+    animation: disappear 0.6s linear;
 }
 
 @keyframes disappear {
@@ -225,36 +280,6 @@ ul {
     }
 }
 
-form input:focus {
-    outline: none;
-    appearance: none;
-}
-
-::placeholder, ::-moz-placeholder, :-ms-input-placeholder {
-    font-family: "League Spartan", sans-serif; 
-    color: var(--blueTwo);
-    font-weight: 400;
-    font-size: 1.1rem;
-}
-
-form .pick, .pick > div, .numberOfPerson {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.pick div {
-    gap: 1rem;
-}
-
-.pick span {
-    font-size: 1.1rem;
-}
-
-.pick div input, #selectDrop {
-    width: 5rem;
-}
-
 .numberOfPerson {
     padding: 1rem;
     border-bottom: 2px solid var(--soft-white);
@@ -263,8 +288,8 @@ form .pick, .pick > div, .numberOfPerson {
 
 .numberOfPerson .content {
     font-weight: 600;
-    font-size: 1.2rem;
-
+    /* font-size: 1.2rem; */
+    font-size: clamp(1rem, 1.5dvw , 1.4rem);
 }
 
 .numberOfPerson span {
@@ -283,7 +308,8 @@ form .pick, .pick > div, .numberOfPerson {
     color: var(--white);
     font-weight: 500;
     padding: 1.4rem 2.8rem;
-    font-size: 1rem;
+    /* font-size: 1rem; */
+    font-size: clamp(0.9rem, 1.3dvw , 1.4rem);
     letter-spacing: 2px;
     border: 2px solid var(--dark);
     background: var(--dark);
@@ -296,21 +322,6 @@ form .pick, .pick > div, .numberOfPerson {
     color: var(--dark);
 }
 
-.formWrapper .illus {
-    position: absolute;
-    display: block;
-    width: 10dvw;
-    z-index: -1;
-    left: 0;
-    bottom: 0;
-    transform: translate(-50%, 50%);
-}
-
-.formWrapper .illus img {
-    display: block;
-    width: 100%;
-}
-
 footer {
     background: var(--dark);
     padding: 5rem 10dvw;
@@ -320,18 +331,161 @@ footer {
     justify-content: flex-start;
     align-items: start;
     gap: 10dvw;
+    position: relative;
+}
+
+#blacksun225 {
+    display: block;
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(to right, orange 34%, white 34% 66%, green 66%);
+}
+
+footer > div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    gap: 10dvw;
 }
 
 footer ul {
     padding: 0.5rem 0;
-    list-style-type: none;
 }
 
 footer ul li {
-    font-size: 0.9rem;
+    /* font-size: 0.9rem; */
+    font-size: clamp(0.8rem, 1.2dvw , 1.3rem);
     letter-spacing: 2px;
 }
 
 footer ul li:not(:last-child) {
     margin-bottom: 1rem;
+}
+
+
+
+@media screen and (width <= 1200px) {
+    main {
+        /* width: 100%;
+        min-height: 100dvh; */
+        background: var(--white) url("assets/hero-bg-tablet-dark.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+
+    header {
+        padding: 5dvw 4dvw;
+    }
+
+    section {
+        padding: 8dvw 4dvw;
+    }
+
+    footer {
+        padding: 8dvw 4dvw;
+    }
+
+    footer > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: start;
+        gap: 1.5rem;
+    }
+
+    footer ul li {
+        font-size: clamp(1rem, 1.2dvw, 1.3rem);
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    main {
+        /* width: 100%;
+        min-height: 100dvh; */
+        background: var(--white) url("assets/hero-bg-mobile.jpg") no-repeat;
+        background-size: 100% auto;
+    }
+
+    section {
+        flex-direction: column;
+        align-items: center;
+        padding: 8dvw 4dvw;
+        /* background: var(--white); */
+    }
+
+    section > .text {
+        padding-bottom: 3rem;
+    }
+    
+    section > .text h1, section > .text p {
+        width: 100%;
+        text-align: center;
+    }
+
+    section > .text, section .formWrapper {
+        width: 100%;
+    }
+
+    section .formWrapper form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    section .formWrapper::after {
+        content: "";
+        display: none;
+    }
+
+    .formWrapper .illus img {
+        display: none;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 6dvw 0;
+    }
+
+    footer > div {
+        flex-direction: column;
+    }
+
+    footer ul, footer ul li {
+        width: 100%;
+    }
+
+    footer ul li {
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 600px) { 
+
+    section {
+        padding: 8dvw 0;
+    }
+
+    section .formWrapper {
+        padding: 0;
+        /* border: 1px solid red; */
+        /* background: blue; */
+        background: transparent;
+    }
+
+    section .formWrapper form {
+        max-width: 100%;
+        padding: 1rem 2rem 2rem;
+        /* background: transparent; */
+    }
+
+    form .pick, .pick > div {
+        gap: 1.5rem;
+    }
+
 }

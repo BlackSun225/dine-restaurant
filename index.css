@@ -260,6 +260,31 @@ header > div p {
     }
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    50% {opacity: 0.7;}
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
 img.family {
     display: block;
     width: 100%;
@@ -526,6 +551,13 @@ footer ul li:not(:last-child) {
     }
 
     .pros {
+        animation: fadeIn 1s linear;
+        animation-fill-mode:both;
+        animation-timeline: view();
+        animation-range: entry 5%;
+    }
+
+    .pros {
         padding: 0 10dvw;
         align-items: center;
     }
@@ -664,10 +696,9 @@ footer ul li:not(:last-child) {
     }
 
     header {
-        padding: 0 12dvw;
-        height: 100dvh;
+        padding: 40dvw 12dvw 20dvh;
+        min-height: 100dvh;
         background: transparent;
-        padding-bottom: 20dvh;
         color: var(--white);
     }
 
@@ -676,7 +707,7 @@ footer ul li:not(:last-child) {
         height: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        /* justify-content: flex-end; */
         align-items: center;
     }
 
@@ -694,7 +725,7 @@ footer ul li:not(:last-child) {
     }
 
     #one {
-        background: linear-gradient(to bottom, var(--dark) 2%, var(--white) 2%);
+        background: linear-gradient(to bottom, transparent 2%, var(--white) 2%);
     }
 
     .actionBtn, .actionBtnDark  {
@@ -705,6 +736,13 @@ footer ul li:not(:last-child) {
     .pros {
         display: block;
         padding: 0 12dvw;
+    }
+
+    .pros .illus, .pros .text, .menuItem {
+        animation: fadeIn 1s linear;
+        animation-fill-mode:both;
+        animation-timeline: view();
+        animation-range: entry 5%;
     }
 
     .pros .illus, .pros .text {
@@ -761,13 +799,13 @@ footer ul li:not(:last-child) {
         padding-bottom: 10dvw;
     }
 
-    .pros:last-child .text {
+    .pros .text {
         padding-top: 9dvw;
     }
 
     .pros .text h2, #two > .text h1, #three .details h1, #four h1 {
-        font-size: clamp(2.5rem, 6dvw , 3.5rem);
-        line-height: 3.5rem;
+        font-size: clamp(1.5rem, 5dvw , 3.5rem);
+        line-height: 3rem;
     }
     
     .pros .text h2,
@@ -786,10 +824,11 @@ footer ul li:not(:last-child) {
     }
 
     #two {
-        padding: 12dvw;
+        padding: 10dvw;
         background: var(--dark);
         flex-direction: column;
         align-items: center;
+        border: 1px solid red;
     }
 
     #two .text, #two .menu {
@@ -819,6 +858,7 @@ footer ul li:not(:last-child) {
 
     .menuItem > .text h2 {
         line-height: 2.6rem;
+        font-size: clamp(1rem, 2.2dvw , 1.5rem);
     }
 
     .menuItem > .text h2::before {
@@ -913,7 +953,7 @@ footer ul li:not(:last-child) {
         align-items: center;
         gap: 1.5rem;
         background: url("assets/ready-bg-tablet.jpg") no-repeat;
-        background-size: 100%;
+        background-size: cover;
     }
 
     footer {
@@ -944,8 +984,8 @@ footer ul li:not(:last-child) {
 
     
     header {
-        padding: 0 6dvw;
-        height: 100dvh;
+        padding: 40dvh 6dvw 0;
+        min-height: 100dvh;
         background: transparent;
         padding-bottom: 20dvh;
         color: var(--white);
@@ -958,9 +998,13 @@ footer ul li:not(:last-child) {
         font-size: clamp(1.5rem, 7dvw , 3.5rem);
     }
 
+    header > div p {
+        font-size: clamp(1rem, 4dvw , 2rem);
+    }
+
     .actionBtn, .actionBtnDark  {
-        font-size: clamp(0.9rem, 2.6dvw , 1.6rem);
-        padding: 5dvw 11dvw;
+        font-size: clamp(0.9rem, 3.4dvw , 1.6rem);
+        padding: 5dvw 13dvw;
     }
 
     .pros .illus .tablet {
@@ -976,12 +1020,23 @@ footer ul li:not(:last-child) {
         padding: 0 6dvw;
     }
 
+    .pros .illus, .pros .text, .menuItem img, .menuItem > .text {
+        animation: fadeIn 1s linear;
+        animation-fill-mode: backwards;
+        animation-timeline: view();
+        animation-range: entry 5%;
+    }
+
+    .pros .text p {
+        font-size: clamp(1rem, 4dvw , 2rem);
+    }
+
     .pros:first-child, .pros:last-child {
         background: var(--white);
     }
 
-    #one .pros:first-child .illus {
-        transform: translateY(-12dvw);
+    .pros:first-child .illus {
+        transform: translateY(-15dvw);
     }
 
     .pros:last-child .illus > img:last-child {
@@ -998,6 +1053,7 @@ footer ul li:not(:last-child) {
 
     #two > .text h1, #two > .text p {
         width: 100%;
+        font-size: clamp(1rem, 4dvw , 2rem);
     }
 
     .menuItem {

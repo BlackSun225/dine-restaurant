@@ -1002,11 +1002,11 @@ footer ul li:not(:last-child) {
         text-align: center;
         font-size: clamp(1rem, 5dvw , 2rem);
         text-wrap: balance;
-        line-height: 1.5rem;
+        line-height: 1.8rem;
     }
 
     .actionBtn, .actionBtnDark  {
-        font-size: clamp(1rem, 6dvw , 2rem);
+        font-size: clamp(1rem, 5dvw , 2rem);
         padding: 6dvw 15dvw;
         font-weight: 600;
     }
@@ -1033,7 +1033,7 @@ footer ul li:not(:last-child) {
 
     .pros .text p {
         font-size: clamp(1rem, 5dvw , 2rem);
-        line-height: 1.5rem;
+        line-height: 1.8rem;
     }
 
     .pros:first-child, .pros:last-child {
@@ -1064,7 +1064,7 @@ footer ul li:not(:last-child) {
     #two > .text p {
         width: 100%;
         font-size: clamp(1rem, 5dvw , 2rem);
-        line-height: 1.5rem;
+        line-height: 1.8rem;
     }
 
     .menuItem {
@@ -1092,7 +1092,7 @@ footer ul li:not(:last-child) {
 
     .menuItem > .text p {
         font-size: clamp(1rem, 5dvw , 2rem);
-        line-height: 1.5rem;
+        line-height: 1.8rem;
     }
 
     #three {
@@ -1138,13 +1138,14 @@ footer ul li:not(:last-child) {
     #three .details > div .paragraph p {
         width: 100%;
         text-align: center;
-        padding: 0;
     }
 
     #three .details > div .paragraph p {
         width: 100%;
         font-size: clamp(1rem, 5dvw , 2rem);
         line-height: 2rem;
+        text-wrap: balance;
+        padding: 0 6dvw;
     }
 
     #four {

@@ -974,7 +974,7 @@ footer ul li:not(:last-child) {
 
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     main {
         background: url("assets/hero-back-mobile.jpg") no-repeat;
         background-size: 100%;

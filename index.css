@@ -1024,9 +1024,9 @@ footer ul li:not(:last-child) {
         width: 100%;
     }
 
-    .pros {
+/*     .pros {
         padding: 0 6dvw;
-    }
+    } */
 
     .pros .illus, .pros .text, .menuItem img, .menuItem > .text {
         animation: fadeIn 1s linear;
@@ -1035,9 +1035,16 @@ footer ul li:not(:last-child) {
         animation-range: entry 5%;
     }
 
+    .pros .text h2 {
+        line-height: 2rem;
+    }
+
     .pros .text p {
+        width: 100%;
         font-size: clamp(1rem, 5dvw , 2rem);
         line-height: 1.8rem;
+        text-align: center;
+        text-wrap: balance;
     }
 
     .pros:first-child, .pros:last-child {

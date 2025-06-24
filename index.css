@@ -1012,7 +1012,7 @@ footer ul li:not(:last-child) {
     }
 
     #one {
-        background: linear-gradient(to bottom, transparent 5%, var(--white) 5%);
+        background: linear-gradient(to bottom, transparent 10%, var(--white) 10%);
     }
 
     .pros .illus .tablet {
@@ -1023,10 +1023,6 @@ footer ul li:not(:last-child) {
         display: block;
         width: 100%;
     }
-
-/*     .pros {
-        padding: 0 6dvw;
-    } */
 
     .pros .illus, .pros .text, .menuItem img, .menuItem > .text {
         animation: fadeIn 1s linear;
@@ -1042,9 +1038,9 @@ footer ul li:not(:last-child) {
     .pros .text p {
         width: 100%;
         font-size: clamp(1rem, 5dvw , 2rem);
-        line-height: 1.8rem;
         text-align: center;
-        text-wrap: balance;
+        line-height: 1.8rem;
+        border: 1px solid red;
     }
 
     .pros:first-child, .pros:last-child {
@@ -1091,6 +1087,7 @@ footer ul li:not(:last-child) {
         text-align: center;
         width: 95%;
         margin: 0 auto;
+        font-size: clamp(1rem, 5dvw , 2rem);
     }
 
     .menuItem > .text {
@@ -1102,7 +1099,6 @@ footer ul li:not(:last-child) {
     }
 
     .menuItem > .text p {
-        font-size: clamp(1rem, 5dvw , 2rem);
         line-height: 1.8rem;
     }
 
@@ -1155,8 +1151,6 @@ footer ul li:not(:last-child) {
         width: 100%;
         font-size: clamp(1rem, 5dvw , 2rem);
         line-height: 2rem;
-        text-wrap: balance;
-        padding: 0 6dvw;
     }
 
     #four {

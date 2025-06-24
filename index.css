@@ -1031,6 +1031,11 @@ footer ul li:not(:last-child) {
         animation-range: entry 5%;
     }
 
+    .pros .text {
+        width: 100%;
+        border: 1px solid red;
+    }
+
     .pros .text h2 {
         line-height: 2rem;
     }

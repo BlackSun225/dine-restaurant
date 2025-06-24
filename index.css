@@ -1012,9 +1012,13 @@ footer ul li:not(:last-child) {
     }
 
     #one {
-        background: linear-gradient(to bottom, black 10%, var(--white) 10%);
+        background: linear-gradient(to bottom, black 15%, var(--white) 15%);
         padding: 0;
         border: 1px solid red;
+    }
+
+    .pros {
+        padding: 0 6dvw;
     }
 
     .pros .illus .tablet {

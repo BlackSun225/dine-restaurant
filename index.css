@@ -1013,6 +1013,8 @@ footer ul li:not(:last-child) {
 
     #one {
         background: linear-gradient(to bottom, transparent 10%, var(--white) 10%);
+        padding-inline: 0;
+        border: 1px solid red;
     }
 
     .pros .illus .tablet {
@@ -1150,6 +1152,7 @@ footer ul li:not(:last-child) {
     #three .details > div .paragraph p {
         width: 100%;
         text-align: center;
+        text-wrap: balance;
     }
 
     #three .details > div .paragraph p {

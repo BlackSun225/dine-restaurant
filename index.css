@@ -1019,6 +1019,7 @@ footer ul li:not(:last-child) {
 
     .pros {
         padding: 0 6dvw;
+        border: 1px solid red;
     }
 
     .pros .illus .tablet {
@@ -1039,7 +1040,6 @@ footer ul li:not(:last-child) {
 
     .pros .text {
         width: 100%;
-        border: 1px solid red;
     }
 
     .pros .text h2 {
@@ -1051,7 +1051,6 @@ footer ul li:not(:last-child) {
         font-size: clamp(1rem, 5dvw , 2rem);
         text-align: center;
         line-height: 1.8rem;
-        border: 1px solid red;
     }
 
     .pros:first-child, .pros:last-child {

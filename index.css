@@ -1152,7 +1152,6 @@ footer ul li:not(:last-child) {
     #three .details > div .paragraph p {
         width: 100%;
         text-align: center;
-        text-wrap: balance;
     }
 
     #three .details > div .paragraph p {

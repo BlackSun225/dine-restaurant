@@ -472,6 +472,9 @@ footer ul li:not(:last-child) {
 
 
 @media screen and (max-width: 600px) { 
+    header {
+        padding: 5dvw 6dvw;
+    }
 
     section {
         flex-direction: column;
@@ -480,13 +483,11 @@ footer ul li:not(:last-child) {
     }
 
     section .text p {
-        font-size: clamp(1rem, 3dvw , 1.4rem);
+        font-size: clamp(1rem, 4.5dvw , 1.4rem);
     }
 
     section .formWrapper {
         padding: 0;
-        /* border: 1px solid red; */
-        /* background: blue; */
         background: transparent;
     }
 

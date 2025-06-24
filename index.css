@@ -999,11 +999,13 @@ footer ul li:not(:last-child) {
 
     header > div p {
         font-size: clamp(1rem, 5dvw , 2rem);
+        text-wrap: balance;
     }
 
     .actionBtn, .actionBtnDark  {
         font-size: clamp(1rem, 5dvw , 2rem);
         padding: 5dvw 15dvw;
+        font-weight: 700;
     }
 
     .pros .illus .tablet {

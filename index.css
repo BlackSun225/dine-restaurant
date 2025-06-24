@@ -1160,7 +1160,7 @@ footer ul li:not(:last-child) {
 
     #three .details > div .paragraph p {
         width: 100%;
-        font-size: clamp(1rem, 4dvw , 2rem);
+        font-size: clamp(1rem, 4.5dvw , 2rem);
         line-height: 2rem;
     }
 

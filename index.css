@@ -688,7 +688,7 @@ footer ul li:not(:last-child) {
 
 
 
-@media screen and (width > 500px) and (width <= 1000px)  {
+@media screen and (width <= 1000px)  {
     main {
         background: url("assets/hero-bg-tablet\ \(1\).jpg") no-repeat;
         background-size: 100%;

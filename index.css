@@ -1012,7 +1012,7 @@ footer ul li:not(:last-child) {
     }
 
     #one {
-        background: linear-gradient(to bottom, black 20%, var(--white) 20%);
+        background: linear-gradient(to bottom, red 20%, var(--white) 20%);
         padding: 0;
         border: 1px solid red;
     }

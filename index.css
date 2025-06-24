@@ -994,16 +994,16 @@ footer ul li:not(:last-child) {
         width: 90%;
         text-align: center;
         text-wrap: balance;
-        font-size: clamp(1.5rem, 7dvw , 3.5rem);
+        font-size: clamp(1.5rem, 8.5dvw , 3.5rem);
     }
 
     header > div p {
-        font-size: clamp(1rem, 4dvw , 2rem);
+        font-size: clamp(1rem, 5dvw , 2rem);
     }
 
     .actionBtn, .actionBtnDark  {
-        font-size: clamp(0.9rem, 3.4dvw , 1.6rem);
-        padding: 5dvw 13dvw;
+        font-size: clamp(0.9rem, 4dvw , 1.6rem);
+        padding: 5dvw 15dvw;
     }
 
     .pros .illus .tablet {

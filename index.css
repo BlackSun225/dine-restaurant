@@ -20,6 +20,7 @@
 body {
     font-family: "League Spartan", sans-serif; 
     scroll-behavior: smooth;
+    background-color: var(--dark);
 }
 
 .logo {
@@ -42,8 +43,8 @@ header > div p {
     text-decoration: none;
     color: var(--white);
     font-weight: 500;
-    padding: 1.4dvw 3dvw;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    padding: 1.6dvw 3.5dvw;
     transition: all 0.5s linear;
 }
 
@@ -215,7 +216,7 @@ header > div p {
     position: absolute;
     display: block;
     width: 92%;
-    height: 4rem;
+    height: 7rem;
     border-radius: 4rem;
     background: radial-gradient(var(--blue), var(--soft-blue));
     filter: blur(27px);
@@ -223,6 +224,7 @@ header > div p {
     left: 50%;
     transform: translate(-50%, 50%);
     z-index: -1;
+    opacity: 0.5;
 }
 
 #three .illus img:not(:first-child) {
@@ -270,6 +272,21 @@ header > div p {
 
     100% {
         transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.1;
+        transform: scale(0.3) ;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 
@@ -422,6 +439,10 @@ ul {
     display: block;
     position: relative;
     z-index: 3;
+}
+
+#three .paragraph p {
+    color: var(--dark-blue);
 }
 
 #three .paragraph .social, 
@@ -696,10 +717,14 @@ footer ul li:not(:last-child) {
     }
 
     header {
-        padding: 40dvw 12dvw 20dvh;
-        min-height: 100dvh;
+        padding: 50dvw 12dvw 17dvw;
+        /* min-height: 100dvh; */
         background: transparent;
         color: var(--white);
+        animation: fadeOut 1s linear;
+        animation-fill-mode: backwards;
+        animation-timeline: view();
+        animation-range: exit 5%;
     }
 
     header > div {
@@ -721,16 +746,16 @@ footer ul li:not(:last-child) {
         width: 100%;
         text-align: center;
         font-size: clamp(1.1rem, 2.5dvw , 1.7rem);
-        line-height: 2.4rem;
+        line-height: 2rem;
     }
 
     #one {
-        background: linear-gradient(to bottom, transparent 2%, var(--white) 2%);
+        background: linear-gradient(to bottom, transparent 13dvw, var(--white) 13dvw);
     }
 
     .actionBtn, .actionBtnDark  {
-        font-size: clamp(1rem, 1.8dvw , 1.6rem);
-        padding: 2.7dvw 6dvw;
+        font-size: clamp(1rem, 2dvw , 1.6rem);
+        padding: 3.2dvw 7dvw;
     }
 
     .pros {
@@ -740,7 +765,7 @@ footer ul li:not(:last-child) {
 
     .pros .illus, .pros .text, .menuItem {
         animation: fadeIn 1s linear;
-        animation-fill-mode:both;
+        animation-fill-mode: both;
         animation-timeline: view();
         animation-range: entry 5%;
     }
@@ -754,8 +779,8 @@ footer ul li:not(:last-child) {
     }
 
     .pros:first-child {
-        background-size: 123%;
-        background-position: -74dvw 14dvw;
+        background-size: 120%;
+        background-position: -74dvw 26dvw;
     }
 
     .pros:last-child {
@@ -763,9 +788,10 @@ footer ul li:not(:last-child) {
         background-position: 50dvw 103%;
     }
 
-    #one .pros:first-child .illus {
-        transform: translateY(-6dvw);
-    }
+    /* #one .pros:first-child .illus {
+        transform: translateY(10%);
+        border: 1px solid red;
+    } */
 
     .pros:last-child .illus::after {
         content: "";
@@ -804,8 +830,9 @@ footer ul li:not(:last-child) {
     }
 
     .pros .text h2, #two > .text h1, #three .details h1, #four h1 {
-        font-size: clamp(1.5rem, 5dvw , 3.5rem);
+        font-size: clamp(1.5rem, 6dvw , 3.5rem);
         line-height: 3rem;
+        text-align: center;
     }
     
     .pros .text h2,
@@ -820,7 +847,7 @@ footer ul li:not(:last-child) {
     }
 
     .pros .text p {
-        width: 90%;
+        width: 80%;
     }
 
     #two {
@@ -852,21 +879,22 @@ footer ul li:not(:last-child) {
     }
 
     .menuItem img {
-        width: 16dvw;
+        width: 17dvw;
     }
 
     .menuItem > .text h2 {
         line-height: 2.6rem;
-        font-size: clamp(1rem, 2.2dvw , 1.5rem);
+        font-size: clamp(1rem, 2.5dvw , 1.5rem);
     }
 
     .menuItem > .text h2::before {
         width: 8%;
+        height: 1px;
     }
 
     .menuItem > .text p {
         font-size: clamp(1rem, 2.2dvw , 1.5rem);
-        line-height: 2.2rem;
+        line-height: 1.8rem;
         font-weight: 400;
     }
 
@@ -941,8 +969,9 @@ footer ul li:not(:last-child) {
     }
 
     #three .details .paragraph {
-        width: 75%;
+        width: 70%;
         text-align: center;
+        font-weight: 500;
     }
 
     #four {
@@ -955,8 +984,16 @@ footer ul li:not(:last-child) {
         background-size: cover;
     }
 
+    #four > h1 {
+        width: 100%;
+    }
+
     footer {
         padding: 8dvw 12dvw;
+    }
+
+    footer .logo {
+        width: 14dvw;
     }
 
     footer > div {
@@ -979,14 +1016,20 @@ footer ul li:not(:last-child) {
         background: url("assets/hero-back-mobile.jpg") no-repeat;
         background-size: 100%;
         background-attachment: fixed;
+        /* background: none; */
     }
 
     
     header {
-        padding: 40dvh 6dvw 0;
-        min-height: 100dvh;
+        /* background: var(--dark) url("assets/hero-back-mobile.jpg") no-repeat;
+        background-size: 100%; */
+        animation: fadeOut 1s linear;
+        animation-fill-mode: backwards;
+        animation-timeline: view();
+        animation-range: exit 5%;
+        padding: 30dvh 6dvw 0;
+        min-height: 200dvw;
         background: transparent;
-        padding-bottom: 20dvh;
         color: var(--white);
     }
 
@@ -1000,25 +1043,28 @@ footer ul li:not(:last-child) {
     header > div p {
         width: 100%;
         text-align: center;
-        font-size: clamp(1rem, 5dvw , 2rem);
+        font-size: clamp(1rem, 4.5dvw , 2rem);
         text-wrap: balance;
         line-height: 1.8rem;
     }
 
     .actionBtn, .actionBtnDark  {
-        font-size: clamp(1rem, 5dvw , 2rem);
+        font-size: clamp(1rem, 4.4dvw , 2rem);
         padding: 6dvw 15dvw;
-        font-weight: 600;
+        
     }
 
     #one {
-        background: linear-gradient(to bottom, red 20%, var(--white) 20%);
-        padding: 0;
-        border: 1px solid red;
+        background: linear-gradient(to bottom, var(--dark) 2%, var(--white) 2%);
+    }
+
+    #one .pros {
+        background: transparent;
     }
 
     .pros {
         padding: 0 6dvw;
+
     }
 
     .pros .illus .tablet {
@@ -1028,6 +1074,12 @@ footer ul li:not(:last-child) {
     .pros .illus .mob {
         display: block;
         width: 100%;
+    }
+
+    .pros:first-child .illus::after, 
+    .pros:last-child .illus::after {
+        height: 8rem;
+        opacity: 0.7;
     }
 
     .pros .illus, .pros .text, .menuItem img, .menuItem > .text {
@@ -1042,45 +1094,52 @@ footer ul li:not(:last-child) {
     }
 
     .pros .text h2 {
-        font-size: clamp(1rem, 7dvw , 2.5rem);
-        line-height: 2rem;
+        font-size: clamp(1rem, 9dvw , 2.5rem);
+        line-height: 2.6rem;
+        margin-top: 12dvw;
     }
 
     .pros .text p {
         width: 100%;
-        font-size: clamp(1rem, 5dvw , 2rem);
+        font-size: clamp(1rem, 4.5dvw , 2rem);
         text-align: center;
-        line-height: 1.8rem;
+        line-height: 1.7rem;
+        font-weight: 500;
     }
 
     .pros:first-child, .pros:last-child {
         background: var(--white);
     }
 
-    .pros:first-child .illus {
-        transform: translateY(-15dvw);
+    #one .pros:first-child .illus {
+        transform: translateY(-11dvw);
     }
 
     .pros:last-child .illus > img:last-child {
         display: none;
     }
 
+    .pros:first-child .text {
+        padding-bottom: 11dvh;
+    }
+
     .pros:last-child .text {
-        padding: 13dvh 0 18dvh;
+        padding: 9dvh 0 13dvh;
     }
 
     #two {
-        padding: 18dvw 6dvw;
+        padding: 20dvw 6dvw 13dvw;
     }
 
     #two > .text h1 {
         width: 100%;
-        font-size: clamp(1rem, 7.5dvw , 3rem);
+        font-size: clamp(1rem, 9dvw , 2.5rem);
+        line-height: 2.6rem;
     }
 
     #two > .text p {
         width: 100%;
-        font-size: clamp(1rem, 5dvw , 2rem);
+        font-size: clamp(1rem, 4.4dvw , 2rem);
         line-height: 1.8rem;
     }
 
@@ -1093,15 +1152,18 @@ footer ul li:not(:last-child) {
         width: 100%;
     }
 
-    .menuItem > .text h2, .menuItem > .text p {
+    .menuItem > .text h2 {
         text-align: center;
-        width: 95%;
-        margin: 0 auto;
-        font-size: clamp(1rem, 5dvw , 2rem);
+        font-size: clamp(1rem, 5.5dvw , 2rem);
+    }
+
+    .menuItem > .text p {
+        text-align: center;
+        font-size: clamp(1rem, 4.5dvw , 2rem);
     }
 
     .menuItem > .text {
-        padding: 10dvw 0;
+        padding: 8dvw 0 10dvw;
     }
 
     .menuItem > .text h2::before {
@@ -1114,7 +1176,7 @@ footer ul li:not(:last-child) {
 
     #three {
         background: var(--white);
-        padding: 15dvh 0;
+        padding: 20dvw 0;
     }
 
     #three .illus {
@@ -1134,6 +1196,10 @@ footer ul li:not(:last-child) {
         display: none;
     }
 
+    #three .details {
+        padding: 0 6dvw;
+    }
+
     #three .details ul {
         display: flex;
         width: 100%;
@@ -1146,8 +1212,8 @@ footer ul li:not(:last-child) {
         margin-bottom: 0.6rem;
     }
 
-    #three .details {
-        padding: 0 6dvw;
+    #three .details ul li .text {
+        font-size: clamp(1rem, 4.5dvw, 1.5rem);
     }
 
     #three .details > div h1, 
@@ -1157,10 +1223,16 @@ footer ul li:not(:last-child) {
         text-align: center;
     }
 
+    #three .details > div h1, 
+    #four h1 {
+        font-size: clamp(1rem, 9dvw , 2.5rem);
+    }
+
     #three .details > div .paragraph p {
         width: 100%;
         font-size: clamp(1rem, 4.5dvw , 2rem);
         line-height: 2rem;
+        font-weight: 500;
     }
 
     #four {
@@ -1178,11 +1250,15 @@ footer ul li:not(:last-child) {
         flex-direction: column;
         align-items: center;
         width: 100%;
-        padding: 18dvw 0;
+        padding: 22dvw 0;
     }
 
     footer > div {
         flex-direction: column;
+    }
+
+    footer .logo {
+        width: 27dvw;
     }
 
     footer ul, footer ul li {

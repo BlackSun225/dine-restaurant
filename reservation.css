@@ -389,6 +389,10 @@ footer ul li:not(:last-child) {
         padding: 8dvw 4dvw;
     }
 
+    footer .logo {
+        width: 14dvw;
+    }
+
     footer > div {
         display: flex;
         flex-direction: column;
@@ -455,6 +459,11 @@ footer ul li:not(:last-child) {
         align-items: center;
         width: 100%;
         padding: 6dvw 0;
+        gap: 1.5rem;
+    }
+
+    footer .logo {
+        width: 27dvw;
     }
 
     footer > div {
@@ -531,6 +540,14 @@ footer ul li:not(:last-child) {
     form .pick {
         /* border: 1px solid red; */
         padding-top: 1rem;
+    }
+
+    footer {
+        padding: 22dvw 0;
+    }
+
+    footer .logo {
+        width: 27dvw;
     }
 
 
